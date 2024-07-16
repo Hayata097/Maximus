@@ -6,11 +6,11 @@
  */
 
 //Define os pinos em que os 5 sensores estão conectados
-#define extrema_direita A11
-#define direita A13
-#define meio A15
-#define esquerda A12
-#define extrema_esquerda A14
+#define extrema_direita A0
+#define direita A5
+#define meio A2
+#define esquerda A3
+#define extrema_esquerda A1
 
 //Cria as variáveis para armazenamento das leituras
 int sensor_ED;

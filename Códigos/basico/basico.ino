@@ -26,7 +26,7 @@ MAPEAMENTO DE HARDWARE:
 CONSTANTES:
 ==============================================================================================================*/
 
-  #define tempo_passo 500
+  #define tempo_passo 600
   #define passoPorCm 20
   #define passoPorGrau 2
 
@@ -62,19 +62,11 @@ void setup() {
 PROGRAMA PRINCIPAL:
 ==============================================================================================================*/
 void loop() {
-  frente(35);
-  delay(500);
-  girar_esquerda(45);
-  delay(500);
   frente(20);
+  girar_esquerda(172);
+  frente(30);
   delay(500);
-  girar_esquerda(35);
-  delay(500);
-  frente(27);
-  delay(500);
-  girar_esquerda(87);
-  delay(500);
-  frente(58);
+  tras(20);
   delay(70000);
 
 
