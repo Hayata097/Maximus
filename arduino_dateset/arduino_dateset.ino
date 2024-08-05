@@ -62,30 +62,29 @@ void setup() {
 PROGRAMA PRINCIPAL:
 ==============================================================================================================*/
 void loop() {
-  
-
-  // Verifica se há dados disponíveis para leitura
+  // Verifica se chegou alguma coisa
   if (Serial.available() > 0) {
-    char comando = Serial.read();
+    char comando;
+    
+    //Aqui o pulo do gato, ele fica lendo e atualizando até chegar no último.
+    while (Serial.available() > 0) {
+      comando = Serial.read();
+    }
+    
+    // ai ele faz o mais recente
     Serial.println(comando);
     
-    if (comando=='w') {
+    if (comando == 'w') {
       frente(1);
     }
-
-    else if (comando=='d') {
+    else if (comando == 'd') {
       girar_direita(5);
     }
-
-    else if (comando=='a') {
+    else if (comando == 'a') {
       girar_esquerda(5);
     }
-
     else {
       tras(1);
     }
-    
-    
-
-    }
+  }
 }
