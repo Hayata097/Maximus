@@ -59,14 +59,15 @@ void lerSensor(String lado) {
   Serial.print("Sensor "); Serial.print(lado); Serial.print(": ");
 
   if (lux < 1000) {
-    Serial.print("na linha preta! Leitura do Lux: ");
+    Serial.println("na linha preta!");
     Serial.println(lux);
-  } else if (verde > (vermelho + 500) && verde > (azul + 500)) {
-    Serial.print("na linha verde! Leitura do Verde: ");
-    Serial.println(verde);
-  } else {
-    Serial.print("fora das linhas! Leitura do Lux: ");
+  } else if (lux < 1300 ) {
+    Serial.println("na linha verde! Leitura do Verde: ");
+    Serial.println(lux);
+  } else if (lux > 1400 ) {
+    Serial.println("fora das linhas! ");
     Serial.println(lux);
   }
-}
 
+
+}
