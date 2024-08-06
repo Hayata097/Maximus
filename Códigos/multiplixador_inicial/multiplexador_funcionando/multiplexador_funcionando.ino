@@ -68,6 +68,25 @@ void lerSensor(String lado) {
     Serial.println("fora das linhas! ");
     Serial.println(lux);
   }
-
-
 }
+
+void loop() {
+  int lerSensorEsquerdo = digitalRead(tcaselect(1));    // Read the left sensor value
+  int lerSensorDireito = digitalRead(tcaselect(2));  // Read the right sensor value
+
+  if (lerSensoresquerdo == HIGH && lerSensorDireito == LOW) {
+    // The robot is on the left edge of the line
+    // Turn right or take appropriate action to stay on track
+  } else if (lerSensoresquerdo == LOW && lerSensorDireito == HIGH) {
+    // The robot is on the right edge of the line
+    // Turn left or take appropriate action to stay on track
+  } else if (lerSensoresquerdo == LOW && lerSensorDireito == LOW) {
+    // The robot is on the line
+    // Continue moving forward or adjust as needed
+  } else if (lerSensoresquerdo == HIGH && lerSensorDireito == HIGH) {
+    // The robot is off the line or in an ambiguous position
+    // Take appropriate action to align with the line
+  }
+}
+
+
