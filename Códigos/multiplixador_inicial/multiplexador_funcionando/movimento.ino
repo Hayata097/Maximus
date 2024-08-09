@@ -55,9 +55,8 @@ void girar_esquerda(int grau){
       digitalWrite(step_direito, LOW);
       delayMicroseconds(tempo_passo);
   }
-}
 
-void esquerda(){
+void esquerda{
       
       digitalWrite(direcao_direito, HIGH);
       digitalWrite(step_direito, HIGH);
@@ -66,11 +65,9 @@ void esquerda(){
       delayMicroseconds(tempo_passo);
 }
 
-void direita(){
+void direita(
       digitalWrite(direcao_esquerdo, HIGH);
       digitalWrite(step_esquerdo, HIGH);
       delayMicroseconds(tempo_passo);
       digitalWrite(step_esquerdo, LOW);
       delayMicroseconds(tempo_passo);
-
-}
