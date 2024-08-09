@@ -78,13 +78,24 @@ void loop() {
       frente(1);
     }
     else if (comando == 'd') {
-      girar_direita(5);
+      frente(1);
+      girar_direita(25);
+ 
     }
     else if (comando == 'a') {
-      girar_esquerda(5);
+     frente(2);
+     girar_esquerda(25);
     }
-    else {
-      tras(1);
+      else if (comando == 'c') {
+      frente(3);
+      girar_direita(90);
+ 
+    }
+    else if (comando == 'z') {
+     frente(3);
+     girar_esquerda(90);
+
     }
   }
+ 
 }
