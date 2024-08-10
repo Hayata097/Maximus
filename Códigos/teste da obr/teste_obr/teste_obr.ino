@@ -167,28 +167,32 @@ void loop(void) {
   // Tomar decisões com base nas leituras dos sensores
   if (luxEsquerdo < 2800 && luxDireito < 2800) {
     Serial.println("Linha detectada em ambos os lados!");
-    frente(2);
-
-  } else if (luxEsquerdo < 3000 && luxEsquerdo > 2500 && luxDireito > 5000) {
-    Serial.println("Linha detectada no lado esquerdo.");
-    girar_esquerda(25);
-    frente(2);
-
-  } else if (luxEsquerdo > 5000 && luxDireito < 3300) {
-    Serial.println("Linha detectada no lado direito.");
+    frente(1);
     girar_direita(25);
-    frente(2);
 
-  } else if (luxEsquerdo > 3400 && luxEsquerdo < 3800 && luxDireito < 3600) {
-    Serial.println("Verde no lado direito.");
+  } else if (luxEsquerdo > 1900 && luxDireito > 4500) {
+    Serial.println("Linha detectada no lado esquerdo.");
+    girar_esquerda(10);
+    frente(1);
+    
+
+  } else if (luxEsquerdo > 4500 && luxDireito < 5600) {
+    Serial.println("Linha detectada no lado direito.");
     girar_direita(10);
-    frente(2);
+    frente(1);
+    
 
-  } else if (luxEsquerdo < 2500 && luxDireito > 5000 ) {
+  } else if (luxEsquerdo > 4400 && luxDireito < 2700) {
+    Serial.println("Verde no lado direito.");
+    frente(3);
+    girar_direita(85);
+    
+
+  } else if (luxEsquerdo < 1900 && luxDireito < 5400 ) {
     Serial.println("Verde no lado esquerdo.");
     frente(3);
     girar_esquerda(85);
-
+   
   } else {
     // Esse bloco é executado se nenhuma das condições acima for atendida
     Serial.println("Nenhuma condição foi satisfeita. Ação padrão.");
