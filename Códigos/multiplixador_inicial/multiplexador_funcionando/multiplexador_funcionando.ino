@@ -68,4 +68,13 @@ void lerSensor(String lado) {
     Serial.println("fora das linhas! ");
     Serial.println(lux);
   }
+<<<<<<< HEAD
+void loop() {
+  
+  int lerSensorDireito = digitalRead(tcaselect(1));    // Read the left sensor value
+  int lerSensorEsquerdo = digitalRead(tcaselect(2));  // Read the right sensor value
+
 }
+=======
+}
+>>>>>>> 9251a7809659a0dc9cd76245c5b8f96462f9364e
