@@ -9,7 +9,7 @@
 #define step_direito 3
 #define direcao_esquerdo 5
 #define direcao_direito 6
-#define enable_pin 8
+#define ena+ble_pin 8
 
 #define tempo_passo 600
 #define passoPorCm 20
@@ -123,7 +123,8 @@ void girar_direita(int grau){
 }
 
 //Recebe a quantidade de graus que o robô deve girar pra esquerda
-void girar_esquerda(int grau){
+void girar_esquerda(int grau)
+{
   
   for (int x = 0; x<(int (grau*9.5)); x++) {
       digitalWrite(direcao_esquerdo, HIGH);
@@ -177,22 +178,21 @@ void loop(void) {
   } else if (luxEsquerdo > 5000 && luxDireito < 3300) {
     Serial.println("Linha detectada no lado direito.");
     girar_direita(25);
-    frente(2);
-
-  } else if (luxEsquerdo > 3400 && luxEsquerdo < 3800 && luxDireito < 3600) {
+    frente(2)
+  } else if (luxEsquerdo > 6000 && luxEsquerdo < 7000 && luxDireito < 3900) {
     Serial.println("Verde no lado direito.");
     girar_direita(10);
     frente(2);
 
-  } else if (luxEsquerdo < 2500 && luxDireito > 5000 ) {
+  } else if (luxEsquerdo < 2500 && luxDireito > 5900 ) {
     Serial.println("Verde no lado esquerdo.");
     frente(3);
     girar_esquerda(85);
-
   } else {
     // Esse bloco é executado se nenhuma das condições acima for atendida
     Serial.println("Nenhuma condição foi satisfeita. Ação padrão.");
     frente(1);
+    
     // Ou outro comportamento desejado
   }
 

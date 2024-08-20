@@ -73,7 +73,6 @@ void loop() {
     
     // ai ele faz o mais recente
     Serial.println(comando);
-    
     if (comando == 'w') {
       frente(1);
     }
@@ -89,7 +88,7 @@ void loop() {
       else if (comando == 'c') {
       frente(3);
       girar_direita(90);
- 
+   
     }
     else if (comando == 'z') {
      frente(3);
